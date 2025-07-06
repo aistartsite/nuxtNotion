@@ -7,7 +7,11 @@
           <!-- Logo -->
           <NuxtLink to="/" class="flex items-center space-x-3 group">
             <div class="relative">
-              <img src="/logo.png" alt="NuxtNotion Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+              <Logo
+              size="xs"
+              custom-class="w-8 h-8"
+              :clickable="true"
+            />
               <!-- 悬停时的光晕效果 -->
               <div class="absolute inset-0 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm scale-150"></div>
             </div>
