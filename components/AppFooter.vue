@@ -5,7 +5,7 @@
         <!-- Logo和描述 -->
         <div class="space-y-4">
           <div class="flex items-center space-x-2">
-            <img src="/logo.svg" alt="NuxtNotion Logo" class="w-8 h-8" />
+            <img src="/logo.png" alt="NuxtNotion Logo" class="w-8 h-8" />
             <h3 class="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               NuxtNotion</h3>
           </div>
