@@ -18,8 +18,8 @@
             <h1 class="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent transition-all duration-300 group-hover:from-blue-500 group-hover:to-purple-500">NuxtNotion</h1>
           </NuxtLink>
           
-          <!-- 桌面端菜单 -->
-          <div class="hidden ml-10 md:flex items-center space-x-6">
+          <!-- 桌面端导航菜单 -->
+          <div class="hidden md:flex items-center space-x-6">
             <NuxtLink to="/" class="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 py-2 px-1 group">
               首页
               <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-200 group-hover:w-full"></span>
@@ -43,7 +43,7 @@
             </NuxtLink>
             <NuxtLink to="/about" class="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 py-2 px-1 group">
               关于
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-200 group-hover:w-full"></span>
             </NuxtLink>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <button 
             @click="toggleTheme"
             class="hidden md:flex w-10 h-10 items-center justify-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all duration-200"
-            :title="isDark ? '切换到亮色模式' : '切换到暗色模式'"
+            :title="isDark ? '切换到浅色模式' : '切换到深色模式'"
           >
             <svg v-if="isDark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -64,7 +64,7 @@
             </svg>
           </button>
           
-          <!-- 语言切换按钮 -->
+          <!-- 语言切换按钮（暂时隐藏） -->
           <!-- <button 
             @click="toggleLanguage"
             class="hidden md:flex w-10 h-10 items-center justify-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 text-sm font-medium"
@@ -75,11 +75,11 @@
           
           <!-- GitHub按钮 -->
           <a 
-            href="https://github.com/f1084/NuxtNotion"
-            target="_blank"
+            href="https://github.com/yourusername/nuxtnotion" 
+            target="_blank" 
             rel="noopener noreferrer"
             class="hidden md:flex w-10 h-10 items-center justify-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all duration-200"
-            title="查看GitHub仓库"
+            title="GitHub"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -112,12 +112,13 @@
           </button>
         </div>
       </div>
+      
       <!-- 移动端菜单 -->
       <div 
         class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
-        :class="mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'"
+        :class="mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
       >
-        <div class="py-2 md:py-4 border-t border-gray-200 dark:border-gray-600 space-y-1">
+        <div class="py-4 space-y-1">
           <NuxtLink 
             to="/" 
             @click="closeMobileMenu"
@@ -163,12 +164,12 @@
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
               </svg>
-              <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-2">
                 <span>PRO</span>
-                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-red-500 text-white">
                   NEW
                 </span>
-              </div>
+              </span>
             </div>
           </NuxtLink>
           <NuxtLink 
@@ -184,7 +185,6 @@
             </div>
           </NuxtLink>
           
-          <!-- 移动端功能按钮分隔线 -->
           <div class="border-t border-gray-200 dark:border-gray-600 my-2 mx-2"></div>
           
           <!-- 移动端主题切换 -->
@@ -199,11 +199,11 @@
               <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
               </svg>
-              <span>{{ isDark ? '亮色模式' : '暗色模式' }}</span>
+              <span>{{ isDark ? '浅色模式' : '深色模式' }}</span>
             </div>
           </button>
           
-          <!-- 移动端语言切换 -->
+          <!-- 移动端语言切换（暂时隐藏） -->
           <!-- <button 
             @click="toggleLanguage"
             class="block w-full py-2 md:py-3 px-3 md:px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 rounded-lg mx-2 text-left"
@@ -218,10 +218,11 @@
           
           <!-- 移动端GitHub链接 -->
           <a 
-            href="https://github.com/f1084/NuxtNotion"
-            target="_blank"
+            href="https://github.com/yourusername/nuxtnotion" 
+            target="_blank" 
             rel="noopener noreferrer"
-            class="block w-full py-2 md:py-3 px-3 md:px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 rounded-lg mx-2 text-left"
+            @click="closeMobileMenu"
+            class="block py-2 md:py-3 px-3 md:px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 rounded-lg mx-2"
           >
             <div class="flex items-center space-x-3">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -242,13 +243,34 @@ const mobileMenuOpen = ref(false)
 // 主题状态
 const isDark = ref(false)
 
-// 语言状态
-const isEnglish = ref(false)
+// 语言状态（暂时隐藏）
+// const isEnglish = ref(false)
 
+// 检查初始主题
+onMounted(() => {
+  // 检查localStorage中的主题设置
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme) {
+    isDark.value = savedTheme === 'dark'
+  } else {
+    // 检查系统主题偏好
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+  
+  // 应用主题
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+})
+
+// 切换移动端菜单
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
 }
 
+// 关闭移动端菜单
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false
 }
@@ -256,7 +278,7 @@ const closeMobileMenu = () => {
 // 主题切换功能
 const toggleTheme = () => {
   isDark.value = !isDark.value
-  // 这里可以添加实际的主题切换逻辑
+  
   if (isDark.value) {
     document.documentElement.classList.add('dark')
     localStorage.setItem('theme', 'dark')
@@ -266,32 +288,14 @@ const toggleTheme = () => {
   }
 }
 
-// 语言切换功能
-const toggleLanguage = () => {
-  isEnglish.value = !isEnglish.value
-  // 这里可以添加实际的语言切换逻辑
-  localStorage.setItem('language', isEnglish.value ? 'en' : 'zh')
-}
+// 语言切换功能（暂时隐藏）
+// const toggleLanguage = () => {
+//   isEnglish.value = !isEnglish.value
+//   // 这里可以添加实际的语言切换逻辑
+// }
 
-// 初始化主题和语言设置
-onMounted(() => {
-  // 从localStorage读取主题设置
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  }
-  
-  // 从localStorage读取语言设置
-  const savedLanguage = localStorage.getItem('language')
-  if (savedLanguage === 'en') {
-    isEnglish.value = true
-  }
-})
-
-// 监听路由变化，自动关闭移动端菜单
-const route = useRoute()
-watch(() => route.path, () => {
+// 监听路由变化，关闭移动端菜单
+watch(() => useRoute().path, () => {
   closeMobileMenu()
 })
 </script>

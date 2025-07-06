@@ -40,6 +40,11 @@
               </NuxtLink>
             </li>
             <li class="inline">
+              <NuxtLink to="/pro" class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200 text-sm font-medium">
+                PRO
+              </NuxtLink>
+            </li>
+            <li class="inline">
               <NuxtLink to="/about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-sm">
                 关于
               </NuxtLink>
